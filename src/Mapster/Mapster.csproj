@@ -2,10 +2,10 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <Description>A fast, fun and stimulating object to object mapper.  Kind of like AutoMapper, just simpler and way, way faster.</Description>
-    <TargetFrameworks>netstandard2.0;netstandard1.3</TargetFrameworks>
+    <TargetFramework>net9.0</TargetFramework>
     <AssemblyName>Mapster</AssemblyName>
     <Description>A fast, fun and stimulating object to object mapper. Kind of like AutoMapper, just simpler and way, way faster.</Description>
-    <PackageId>Mapster</PackageId>
+    <PackageId>NetAdmin.Mapster</PackageId>
     <PackageTags>Mapper;AutoMapper;Fast;Mapping</PackageTags>
     <PackageIcon>icon.png</PackageIcon>
     <PackageIconUrl>https://cloud.githubusercontent.com/assets/5763993/26522718/d16f3e42-4330-11e7-9b78-f8c7402624e7.png</PackageIconUrl>
@@ -15,7 +15,7 @@
     <NetStandardImplicitPackageVersion Condition=" '$(TargetFramework)' == 'netstandard1.3' ">1.6.1</NetStandardImplicitPackageVersion>
 	<IsPackable>true</IsPackable>
     <RootNamespace>Mapster</RootNamespace>
-    <Version>7.3.0</Version>
+    <Version>7.3.1</Version>
     <Nullable>enable</Nullable>
     <NoWarn>1701;1702;8618</NoWarn>
   </PropertyGroup>

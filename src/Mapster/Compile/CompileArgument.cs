@@ -21,7 +21,7 @@ namespace Mapster
         {
             return _srcNames ??= (from it in Settings.Resolvers
                 where it.SourceMemberName != null
-                select it.SourceMemberName!.Split('.').First()).ToHashSet();
+                select it.SourceMemberName!.Split('.').First()).UtilsToHashSet();
         }
 
         private HashSet<string>? _destNames;
@@ -29,7 +29,7 @@ namespace Mapster
         {
             return _destNames ??= (from it in Settings.Resolvers
                 where it.DestinationMemberName != null
-                select it.DestinationMemberName.Split('.').First()).ToHashSet();
+                select it.DestinationMemberName.Split('.').First()).UtilsToHashSet();
         }
 
         private bool _fetchConstructUsing;

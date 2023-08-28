@@ -44,7 +44,23 @@ namespace Mapster.Utils
                 if (interfaceType != null)
                     expr = Expression.Convert(expr, interfaceType);
             }
-            return Expression.PropertyOrField(expr, prop);
+
+            //修复：当子类使用new关键字覆盖父类属性时，导致AmbiguousMatchException -nsnail@2023年8月28日13:33:32
+            try
+            {
+                return Expression.PropertyOrField(expr, prop);
+            }
+            catch (AmbiguousMatchException)
+            {
+                var property = expr.Type.GetProperties().Where(x => x.Name == prop)
+                    .FirstOrDefault(x => x.DeclaringType == x.ReflectedType);
+                if (property != null)
+                {
+                    return Expression.Property(expr, property);
+                }
+
+                throw;
+            }
         }
 
         private static bool IsReferenceAssignableFrom(this Type destType, Type srcType)

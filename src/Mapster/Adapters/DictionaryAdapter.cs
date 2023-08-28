@@ -107,7 +107,7 @@ namespace Mapster.Adapters
             var ignores = arg.Settings.Resolvers
                 .Select(r => r.SourceMemberName)
                 .Where(name => name != null)
-                .ToHashSet();
+                .UtilsToHashSet();
 
             //ignore
             var ignoreIfs = new Dictionary<string, Expression>();

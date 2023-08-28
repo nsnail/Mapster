@@ -25,7 +25,7 @@ namespace Mapster.Utils
             }
         }
 
-        public static HashSet<T> ToHashSet<T>(this IEnumerable<T> source)
+        public static HashSet<T> UtilsToHashSet<T>(this IEnumerable<T> source)
         {
             return new HashSet<T>(source);
         }
